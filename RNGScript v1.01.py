@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Mar 30 19:23:08 2022
-
 @author: jankodzbanko
 """
 import random
@@ -21,13 +20,18 @@ for i in range(3):
 time.sleep(0.1)
 print('\n')
 
-#function to create a new list if there's none.
+#function to create a new list.
 def create_list():
-    first_inp = input('No list to read found, creating new one. Enter first option: \n')
+    first_inp = input('Enter first option: \n')
     with open('list.txt', 'w') as file:
         file.write(first_inp)
 
+#checking for list.txt in current working dir.
 if os.path.isfile(os.path.abspath(os.getcwd()) + '\list.txt') == False:
+    print('No list to read found, creating new one.\n')
+    for i in range(3):
+        print('*')
+        time.sleep(0.1)
     create_list()
  
 #reads a .txt file with options to choose from, creates list of choosen indexes, sorts them from the biggest to ensure that lowering index wont break
@@ -55,19 +59,11 @@ def base_roll():
         count += 1
         time.sleep(0.5)
     time.sleep(0.5)
-    decision = input('Restart - 1, exchange 1 for 2 - 2, Exit - 3\n')
+    decision = input('Restart - 1, exchange 1 for 2 - 2.\n')
     if decision == '1':
         restart = True
     elif decision == '2':
         twoForOne()
-    elif decision == '3':
-        for i in range(3):
-            print('*')
-            time.sleep(0.1)
-        time.sleep(0.1)
-        print('Goodbye.')
-        restart = False
-        
         
 def view_list():
     with open('list.txt', 'r') as file:
