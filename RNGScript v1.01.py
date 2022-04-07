@@ -21,13 +21,18 @@ for i in range(3):
 time.sleep(0.1)
 print('\n')
 
-#function to create a new list if there's none.
+#function to create a new list.
 def create_list():
-    first_inp = input('No list to read found, creating new one. Enter first option: \n')
+    first_inp = input('Enter first option: \n')
     with open('list.txt', 'w') as file:
         file.write(first_inp)
 
+#checking for list.txt in current working dir.
 if os.path.isfile(os.path.abspath(os.getcwd()) + '\list.txt') == False:
+    print('No list to read found, creating new one.\n')
+    for i in range(3):
+    print('*')
+    time.sleep(0.1)
     create_list()
  
 #reads a .txt file with options to choose from, creates list of choosen indexes, sorts them from the biggest to ensure that lowering index wont break
