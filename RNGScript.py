@@ -61,7 +61,7 @@ def twoForOne():
     indexes.sort(reverse=True)
     for k in indexes:
         result.append(base_list.pop(k))
-    print('Wynik losowania: {}'.format(result))
+    print('The roll result: {}'.format(result))
     decision = input('Restart - 1, Exit - 2.\n')
     if decision == '1':
         restart = True
