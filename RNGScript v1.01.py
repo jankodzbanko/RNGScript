@@ -22,6 +22,7 @@ print('\n')
 
 #function to create a new list.
 def create_list():
+    time.sleep(0.1)
     first_inp = input('Enter first option: \n')
     with open('list.txt', 'w') as file:
         file.write(first_inp)
@@ -38,6 +39,7 @@ if os.path.isfile(os.path.abspath(os.getcwd()) + '\list.txt') == False:
 #the script, and then pops out result from base list to a result list, which makes it so all the results are unique, no doubles.
 def base_roll():
     base_list.clear()
+    time.sleep(0.1)
     with open('list.txt', 'r') as file:
         for line in file:
             base_list.append((line).replace('\n', ''))
@@ -81,6 +83,7 @@ def view_list():
 #asks if the roll is good or not, if not, it pops given var from result and chooses 2 random vars from base list
 #if its good, just prints result out
 def twoForOne():
+    time.sleep(0.1)
     global restart
     restart = False
     exchange_idx = input('Which option would you like to change? Number in order: {}\n'.format(result))
@@ -110,6 +113,7 @@ def twoForOne():
 
 #option to add a variable to a list, via writing it on a .txt file
 def add_aThing():
+    time.sleep(0.1)
     with open('list.txt', 'a') as file:
         file.write('\n' + (input('Write a position to add: \n')))
 
