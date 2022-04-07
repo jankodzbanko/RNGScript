@@ -21,8 +21,8 @@ def create_list():
 if os.path.isfile(os.path.abspath(os.getcwd()) + '\list.txt') == False:
     create_list()
  
-#reads a .txt file with options to choose from, creates list of choosen indexes, sorts them, and then pops out result from base list to a result list, which 
-#makes it so all the results are unique, no doubles.
+#reads a .txt file with options to choose from, creates list of choosen indexes, sorts them from the biggest to ensure that lowering index wont break
+#the script, and then pops out result from base list to a result list, which makes it so all the results are unique, no doubles.
 def base_roll():
     with open('list.txt', 'r') as file:
         for line in file:
@@ -69,7 +69,7 @@ def twoForOne():
         print('*')
         print('*')
         print('*')
-        print('No to elo.')
+        print('Goodbye.')
         restart = False
 
 #option to add a variable to a list, via writing it on a .txt file
@@ -77,7 +77,7 @@ def add_aThing():
     with open('list.txt', 'a') as file:
         file.write('\n' + (input('Write a position to add: \n')))
 
-#shall I call it a main menu? :)        
+#shall I call it a main menu? :)
 def start():
     global restart
     print('May RNGesus have mercy!')
@@ -95,7 +95,7 @@ def start():
         print('*')
         print('*')
         print('*')
-        print('No to elo.')
+        print('Goodbye.')
         restart = False
 
 #basic loop for the script to keep working instead of exiting on any result.
