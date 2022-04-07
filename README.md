@@ -1,6 +1,7 @@
 # RNGScript
 It's my first "working" Python script, the main function is to randomly choose given number of option from the list that stays in another file, which is
-created on first startup, which allows the list to be kept for whatever things you want RNGesus to decide upon on another day.
+created on first startup, which allows the list to be kept for whatever things you want RNGesus to decide upon on another day. Also, positions picked up from
+the list will not appear twice in the same roll. At least if they are not wrote twice on the list ;). Anyways, result should only give a combination of unique variables.
 
 Options can be added when running the script, as well as manually through editing "list.txt" that should appear in a folder with the script file
 after first running. To add things manually, just write another option in next line in the file.
