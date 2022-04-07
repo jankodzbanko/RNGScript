@@ -13,6 +13,14 @@ base_list = []
 global restart
 restart = True
 
+print('May RNGesus have mercy!')
+print('\n')
+for i in range(3):
+    print('*')
+    time.sleep(0.1)
+time.sleep(0.1)
+print('\n')
+
 #function to create a new list if there's none.
 def create_list():
     first_inp = input('No list to read found, creating new one. Enter first option: \n')
@@ -25,6 +33,7 @@ if os.path.isfile(os.path.abspath(os.getcwd()) + '\list.txt') == False:
 #reads a .txt file with options to choose from, creates list of choosen indexes, sorts them from the biggest to ensure that lowering index wont break
 #the script, and then pops out result from base list to a result list, which makes it so all the results are unique, no doubles.
 def base_roll():
+    base_list.clear()
     with open('list.txt', 'r') as file:
         for line in file:
             base_list.append((line).replace('\n', ''))
@@ -45,6 +54,7 @@ def base_roll():
         print((count + 1),'-', j)
         count += 1
         time.sleep(0.5)
+    time.sleep(0.5)
     decision = input('Restart - 1, exchange 1 for 2 - 2.\n')
     if decision == '1':
         restart = True
@@ -52,6 +62,9 @@ def base_roll():
         twoForOne()
         
 def view_list():
+    with open('list.txt', 'r') as file:
+        for line in file:
+            base_list.append((line).replace('\n', ''))
     for count, j in enumerate(base_list):
         print((count + 1),'-', j)
         count += 1
@@ -79,14 +92,15 @@ def twoForOne():
         print((count + 1),'-', j)
         time.sleep(0.5)
         count += 1
+    time.sleep(0.5)
     decision = input('Restart - 1, Exit - 2.\n')
     if decision == '1':
         restart = True
     elif decision == '2':
         for i in range(3):
             print('*')
-            time.sleep(0.2)
-        time.sleep(0.3)
+            time.sleep(0.1)
+        time.sleep(0.1)
         print('Goodbye.')
         restart = False
 
@@ -98,31 +112,25 @@ def add_aThing():
 #shall I call it a main menu? :)
 def start():
     global restart
-    print('May RNGesus have mercy!')
-    print('\n')
-    for i in range(3):
-        print('*')
-        time.sleep(0.2)
-    time.sleep(0.3)
-    print('\n')
+    time.sleep(0.2)
     op = input('1 - A roll\n'
                '2 - Add postion to a list\n'
-               '3 - Exit\n')
+               '3 - Exit\n'
+               '4 - View full list\n')
     if op == '1':
         base_roll()
     elif op == '2':
         add_aThing()
+    elif op == '4':
+        view_list()
     elif op == '3':
         for i in range(3):
             print('*')
-            time.sleep(0.2)
-        time.sleep(0.3)
+            time.sleep(0.1)
+        time.sleep(0.1)
         print('Goodbye.')
         restart = False
 
 #basic loop for the script to keep working instead of exiting on any result.
 while restart:
     start()
-if restart == False:
-    result.clear()
-    base_list.clear()
