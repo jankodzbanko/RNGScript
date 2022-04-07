@@ -12,4 +12,8 @@ What it does (for now):
 2. A function to choose n number of things to get from your list.
 3. Results of the roll may be changed once, but only in a 1 for 2 trade-off.
 4. Doesnt exit when roll is done, trying to make it so if you want to, you can try out many combinations without starting up the script again and again.
-5. It ain't much, but it's newbie's honest work ^^.
+
+v1.01:
+-Fixed results getting doubled after few resets by clearing result and base list on restart
+-Added some delays when printing, values still to be adjusted
+-Made it so the result is printed with each position in next line with a number added.
