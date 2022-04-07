@@ -55,11 +55,19 @@ def base_roll():
         count += 1
         time.sleep(0.5)
     time.sleep(0.5)
-    decision = input('Restart - 1, exchange 1 for 2 - 2.\n')
+    decision = input('Restart - 1, exchange 1 for 2 - 2, Exit - 3\n')
     if decision == '1':
         restart = True
     elif decision == '2':
         twoForOne()
+    elif decision == '3':
+        for i in range(3):
+            print('*')
+            time.sleep(0.1)
+        time.sleep(0.1)
+        print('Goodbye.')
+        restart = False
+        
         
 def view_list():
     with open('list.txt', 'r') as file:
