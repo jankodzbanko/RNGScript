@@ -14,6 +14,7 @@ What it does (for now):
 4. Doesnt exit when roll is done, trying to make it so if you want to, you can try out many combinations without starting up the script again and again.
 
 v1.01:
--Fixed results getting doubled after few resets by clearing result and base list on restart
+-Fixed results getting doubled after few resets by clearing result and base list on restart (sadly still not fully there, with high number of options
+it tends to give out doubles, working on it).
 -Added some delays when printing, values still to be adjusted
 -Made it so the result is printed with each position in next line with a number added.
