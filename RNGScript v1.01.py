@@ -13,12 +13,11 @@ global restart
 restart = True
 
 print('May RNGesus have mercy!')
-print('\n')
 for i in range(3):
     print('*')
-    time.sleep(0.1)
+    time.sleep(0.2)
 time.sleep(0.1)
-print('\n')
+
 
 #function to create a new list.
 def create_list():
@@ -29,7 +28,7 @@ def create_list():
 
 #checking for list.txt in current working dir.
 if os.path.isfile(os.path.abspath(os.getcwd()) + '\list.txt') == False:
-    print('No list to read found, creating new one.\n')
+    print('No list to read found, creating new one.')
     for i in range(3):
         print('*')
         time.sleep(0.1)
